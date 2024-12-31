@@ -1,10 +1,16 @@
+# SJN Story analysis with Nomic Atlas Stories
+
+A 2024 project with the Solutions Journalism Project and Meedan. 
+
+Supported by the Rockefeller Foundation.
+
+Demo and interactive map: https://sjn-atlas-stories-r6ksf1ycs-sip-team.vercel.app
+
+## Data Stories
+
 This is an example repository for creating Data Stories with [Nomic Atlas](https://atlas.nomic.ai)
 
 This creates folios that can step & scroll through different views of your Atlas data maps.
-
-# Join our Discord
-
-We invite you to join our [Discord channel](https://discord.gg/qP5fwTSX) so you can ask questions and brainstorm data mapping ideas with the Nomic team & our community of users testing this new storytelling feature.
 
 # Quickstart
 
