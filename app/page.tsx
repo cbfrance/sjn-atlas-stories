@@ -2,6 +2,9 @@
 
 import { Scrollyteller, Folio } from '@nomic-ai/atlas-stories-react';
 import '@nomic-ai/atlas-stories-react/dist/style.css';
+import { colors } from './colors'; // Updated import for colors
+import RebusIcon from './RebusIcon'; // Importing the new RebusIcon component
+
 export default function Page() {
   console.log({ Scrollyteller });
 
@@ -13,82 +16,70 @@ export default function Page() {
         maxWidth: 'calc(100vw - 100px)',
       }}
     >
-      <h1>Atlas story</h1>
-      <Scrollyteller map="nomic/wiki-people/map/c0551f2f-b449-46dd-92ed-3e4fd17e08e1">
+      <h1>Solutions Universe</h1>
+      <Scrollyteller map="christopherbfrance/articles-map-20241230-222047/map/2e4eca5c-e55c-4c11-9b31-c600c7b2b5e5">
         <Folio zoom={{ x: [-50, 50], y: [-50, 50] }}>
-          This map is made of people. Each dot is a person, and the people are
-          organized by similarity. It's like soylent green but with more
-          famousness.
+          This is a map of all of the articles accepted into the Story Tracker database from early 2022 to late 2024. Each region is a "galaxy" that roughly clusters articles by topic.
+
+          <small>For the 2024 Story Tracker map, we used the <span className="font-mono"><a href="https://arxiv.org/abs/2402.01613">Nomic Embed 1.5</a></span> model to process embeddings.</small>
         </Folio>
 
-        <Folio hash="bwzI">
-          The biggest level of organization is about occupation.
+        <Folio hash="8hqa">
+          During our 2024 work on insight analysis, we focused on the environment and agriculture topic, which appeares here as a region of the bottom half of the "solutions"
         </Folio>
 
-        <Folio hash="t32w" zoom={{ x: [-50, 50], y: [-50, 50] }}>
-          Wikipedia *loves* sports. Athletes are about 50% of all people in
-          Wikipedia, and occupy the entire bottom of the map.
+        <Folio hash="jQ1e">
+          If we zoom in we can see subcategories of the environment and agriculture topic.
         </Folio>
 
-        <Folio hash="eXxy" zoom={{ x: [-18, 52], y: [5, 52] }}>
-          About one in seven of the people on Wikipedia play soccer *alone*.
-          Among soccer players, the sub-organization is by country.
+        <Folio hash="LKEa">
+          The intersection of
+          <RebusIcon label="environmental" color={colors.environmental.base} />
+          and
+          <RebusIcon label="agriculture" color={colors.agriculture.base} />
+          topics with
+          <RebusIcon label="urban planning" color={colors.urbanPlanning.base} />
         </Folio>
 
-        <Folio hash="Cofv" zoom={{ x: [-32, 45], y: [-47, 32] }}>
-          But categories aren't perfect -- we can't distinguish in the
-          occupational categories between players of **American** football (
-          where athletes compete not to kick a ball but to see who can take the
-          most traumatic brain injuries for the team ) and players of soccer
-          football.
+        <Folio hash="tPlB">
+          Urban farming
         </Folio>
 
-        <Folio hash="lnWe" zoom={{ x: [-32, 45], y: [-47, 32] }} duration={300}>
-          This is a case where Atlas's semantic filters can help. Let's embed
-          everything by vector similarity to a sentence about American football.
-          {'>'} A player of football who runs up and down the gridiron with the
-          pigskin. Hike! Like Tom Brady. The red dots are the most similar, and
-          the yellow the least.
+        <Folio hash="gGYs">
+          Waste management and Recycling
         </Folio>
 
-        <Folio hash="iQBh" zoom={{ x: [-32, 45], y: [-47, 32] }} duration={300}>
-          Conversely, comparing to the sentence:
-          {'>'} A player of football who kicks and scores, drawing penalties and
-          red cards like Cristiano Ronaldo or Lionel Messi. We get almost
-          opposte results.
+        <Folio hash="hax7">
+          Wildfires
         </Folio>
 
-        <Folio hash="mnJh" zoom={{ x: [-40, 45], y: [-47, 42] }}>
-          We can position by those two axes -- the "American" axis on the x axis
-          and the "Soccer" axis on the y -- to use these arbitrary sentences to
-          partition between the two sports. The farther to the right is US
-          football; to the top is soccer. The green to the lower right in this
-          vector space are the Americans once again. The partition is clean, but
-          not completely clear; some people fall in between.
+        <Folio hash="jzFT">
+          The galaxy of health articles in the Solutions Journalism Network.
         </Folio>
 
-        <Folio hash="jbcl" zoom={{ x: [-5, 10], y: [-20, -15] }}>
-          You don't need embeddings to take advantage of Atlas's powerful
-          filters! Look at Europe, colored by region.
+        <Folio hash="5Ndc">
+          Urban planning
         </Folio>
 
-        <Folio hash="rxzQ" zoom={{ x: [-5, 10], y: [-20, -15] }}>
-          Let's color by people born since 1945. You can clearly see the nations
-          of Europe.
+        <Folio hash="hsrI">
+          Solar energy
         </Folio>
 
-        <Folio hash="Vtu2" zoom={{ x: [-5, 10], y: [-20, -15] }}>
-          Let's color by people born between 1870 and 1945. These are the old
-          borders, with the German empire and fuzzier nationalities in Eastern
-          Europe.
+        <Folio hash="VH8I">
+          Cooking stoves
         </Folio>
 
-        <Folio hash="t6J0" zoom={{ x: [-5, 10], y: [-20, -15] }}>
-          When you move to where the people die, the definition increases.
+        <Folio hash="45gF">
+          COVID-19
+        </Folio>
+
+        <Folio hash="KLRd">
+          COVID-19 Korean outbreak
+        </Folio>
+        <Folio hash="RPcE">
+          COVID-19 PPE Stories
         </Folio>
       </Scrollyteller>
     </div>
   );
 }
-
-// export default Page;
